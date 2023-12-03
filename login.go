@@ -42,7 +42,7 @@ func login() {
 		fmt.Printf("sha1:\n%s\n", chksum)
 	}
 
-	Url, _ := url.Parse("http://172.16.8.6/cgi-bin/srun_portal")
+	Url, _ := url.Parse("http://172.17.1.2/cgi-bin/srun_portal")
 	params := url.Values{
 		"callback":     {"jQuery112408106679898811244_" + strconv.FormatInt(time.Now().Unix()/1000000, 10)},
 		"action":       {"login"},
@@ -88,7 +88,7 @@ func get_ip() string {
 	var client = &http.Client{
 		Timeout: time.Second * 5,
 	}
-	rqst, _ := http.NewRequest("GET", "http://172.16.8.6", nil)
+	rqst, _ := http.NewRequest("GET", "http://172.17.1.2", nil)
 	rqst.Header = config.Header
 	rsps, err := client.Do(rqst)
 	if err != nil {
@@ -111,7 +111,7 @@ func get_ip() string {
 }
 
 func get_token(ip string) string {
-	Url, _ := url.Parse("http://172.16.8.6/cgi-bin/get_challenge")
+	Url, _ := url.Parse("http://172.17.1.2/cgi-bin/get_challenge")
 	params := url.Values{
 		"callback": {"jQuery1124049533407110317169_" + strconv.FormatInt(time.Now().Unix()/1000000, 10)},
 		"username": {config.Username},
