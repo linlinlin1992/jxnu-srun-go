@@ -1,7 +1,7 @@
 #!/bin/bash
 name="srun"
 version="v0.1.0"
-path="./out"
+path="/out"
 
 start=$(date +%s)
 
