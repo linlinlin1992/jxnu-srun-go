@@ -33,3 +33,6 @@ done
 end=$(date +%s)
 dur=$(($end - $start))
 echo "Build time: $dur seconds"
+
+# Set output variable
+echo "::set-output name=artifact_path::$GITHUB_WORKSPACE/$path"
