@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 name="srun"
 version="v0.1.0"
 path="./out"
